@@ -1,0 +1,63 @@
+{
+    "roles":
+        {
+            "DEV":[
+                {
+                    "name": "DEV",
+                    "color": "#d40f0f",
+                    "permissions":["MANAGE_CHANNELS","MANAGE_ROLES","READ_MESSAGE_HISTORY","MANAGE_WEBHOOKS","MANAGE_EMOJIS","MANAGE_GUILD","VIEW_CHANNEL"]
+                },
+                {
+                    "name": "DEV j",
+                    "color": "GREEN",
+                    "permissions":["MANAGE_EMOJIS","MANAGE_CHANNELS","VIEW_CHANNEL"]
+                },
+                {
+                    "name": "TEST",
+                    "color": "RANDOM",
+                    "permissions": ["VIEW_CHANNEL"]
+                },
+                {
+                    "name": "DEBUGER",
+                    "COLOR": "#ecf32d",
+                    "permissions":["READ_MESSAGE_HISTORY","MANAGE_ROLES","MANAGE_WEBHOOKS","MANAGE_EMOJIS","MANAGE_GUILD","VIEW_CHANNEL"]
+                }
+            ],
+
+            "MOD":[
+                {
+                    "name": "Mod",
+                    "color": "ORANGE",
+                    "permissions":["KICK_MEMBERS","BAN_MEMBERS","MANAGE_CHANNELS","MANAGE_ROLES","ADD_REACTIONS","CREATE_INSTANT_INVITE","VIEW_CHANNEL"]
+                },
+                {
+                    "name": "Staff",
+                    "color": "GRAY",
+                    "permissions":["KICK_MEMBERS","MANAGE_CHANNELS","MANAGE_EMOJIS","MANAGE_ROLES","ADD_REACTIONS","VIEW_CHANNEL"]
+                },
+                {
+                    "name": "Rob",
+                    "color": "#19bed1",
+                    "permissions": ["KICK_MEMBERS","MANAGE_CHANNELS","MANAGE_EMOJIS","BAN_MEMBERS","MANAGE_CHANNELS","MANAGE_GUILD","READ_MESSAGE_HISTORY","MANAGE_ROLES","MANAGE_WEBHOOKS","MANAGE_NICKNAMES","ADD_REACTIONS","CREATE_INSTANT_INVITE","VIEW_CHANNEL"]
+                }
+            ],
+            "ADMINISTRATOR": [
+                {
+                    "name":"ADMIN",
+                    "color":"RED",
+                    "permissions":["MANAGE_WEBHOOKS","READ_MESSAGE_HISTORY","KICK_MEMBERS","BAN_MEMBERS","MANAGE_CHANNELS","MANAGE_ROLES","MANAGE_GUILD","MANAGE_EMOJIS","ADD_REACTIONS","CREATE_INSTANT_INVITE","VIEW_CHANNEL"]
+                },
+                {
+                    "name":"CO-ADMIN",
+                    "color":"BLUE",
+                    "permissions":["KICK_MEMBERS","BAN_MEMBERS","MANAGE_CHANNELS","MANAGE_ROLES","ADD_REACTIONS","CREATE_INSTANT_INVITE","VIEW_CHANNEL"]
+                },
+                {
+                    "name":"MANAGER",
+                    "color":"#1ea73c",
+                    "permissions":["MANAGE_CHANNELS","MANAGE_EMOJIS","MANAGE_GUILD","MANAGE_ROLES","MANAGE_WEBHOOKS","ADD_REACTIONS","VIEW_CHANNEL"]
+                }
+            ]
+        }
+
+}
