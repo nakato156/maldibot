@@ -1,5 +1,3 @@
-const ytdl = require('ytdl-core-discord');
-
 module.exports ={
     name: "leave",
     alias:["salir"],

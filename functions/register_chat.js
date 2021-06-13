@@ -4,13 +4,19 @@ module.exports = {
         if(process.env.ENVIROMENT_TYPE == "Dev") return console.log("Env Dev")
         const user = message.author.id
         const channelID = message.channel.id
-        const channelName = message.channel.name 
-        const messageSave = await chatModel.insertMany({
+        const channelName = message.channel.name   
+        const atach = message.attachments;
+        let Urls = []
+        if (atach !=  []){
+            atach.forEach(at => Urls.push(at.url))
+        } 
+        await chatModel.insertMany({
             channelID,
             channelName,
             userID: user,
-            message: message.content
+            message: message.content,
+            urls: Urls
         })
-        console.log(messageSave)
+        // console.log(messageSave)
     }
 }

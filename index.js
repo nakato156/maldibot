@@ -39,19 +39,19 @@ client.on('message', message => {
   messageSaveChats.saveMessage(message)
   // Ignore messages that aren't from a guild
   if (!message.guild) return;
-  if (/[a-z]\:\/\/porn|xvi|(x{2,3})\.?$/i.test(message.content)|| /porn|xvi|(x{2,3})\.?$/i.test(message.content) || /[a-z]\:\/\/[a-zA-Z]\.?\/q= porn|xvi|(x{2,3})$/i.test(message.content)){
+  if (/[a-z]\:\/\/porn|xvi|(x{2,3})\.?$/i.test(message) || /[a-z]\:\/\/[a-zA-Z]\.?\/q= porn|xvi|(x{2,3})$/i.test(message) || /p{1,}o{1,}r{1,}n{1,}|xvi|(x{2,5})\.?$/i.test(message)){
     message.delete()
     .then(y=>console.log(`el mensaje borrado fue ${message.content}`))
     .catch(e=>console.log(`error al borrar mensaje: '${e}'`));
     message.channel.send("No se admite nopor")
   }
 
-  if (message.content.startsWith("!")) {
+  if (message.content.startsWith(">")) {
     let args = message.content.slice(1).trim().split(/ +/g)
     let command = args.shift().toLowerCase()
     let cmd = client.commands.get(command) || client.commands.find(c=>c.alias.includes(command))
 
-    if(!cmd) return message.channel.send("Valla que incomodo \n Utiliza !help para ver la lista de comandos")
+    if(!cmd) return message.channel.send("Valla que incomodo \nUtiliza !help para ver la lista de comandos")
     //cooldowns the commands
     // crea la colleccion si no existe
     if (!cooldowns.has(cmd.name)) {

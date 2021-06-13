@@ -1,4 +1,4 @@
-#Maldibot
+#Maldibot V1.1
 
 **Table of Contents**
 
@@ -12,7 +12,17 @@
 Maldibot es un bot diseñado para Discord desarrollado en **Node js**, fue elaborado para realizar casi cualquier tarea menos hacer la tuya. Esta es la v1, aunque hay comandos inestables. No se proporciona un link para unir al bot, debido a que sigue en desarrollo y se prefiere tenerlo en un ambiente controlado.  
 
 ------------
+# Release V1.1
+En esta version se cambio la forma en que se hace las peticiones a la API de YouTube, esto deberia de corregir errores de compatibilidad del servidor, en caso de *localhost* no hay problemas hasta la fecha. Asi mismo se agrego un nuevo comando y se cambio la forma de conexion a la Base de Datos.
 
+##### cambios
+ - Agregado de comando `clear`
+ - Cambio de conexion a la BD
+ - Mejora en el filtro de mensajes
+ - Cambio en uso de la API de YouTube
+ - Almacenado de url en BD
+
+------------
 
 ## Comandos
  #### aclaraciones
@@ -68,6 +78,8 @@ Todos los comandos en esta seccion solo pueden ser usado por el administrador de
  
  - `install <rol>` : crea los roles predeterminados, especificaos en el archivo `dev.json`, se puede especificar una categoria en esecifico, ejemplo `!rol install DEV` o se puede instalar todo `!rol install All`. 
  
+ - `clear <number>`:  elimina mensajes de acuerdo a la cantidad especificada, la cantidad debe estar en el rango de 1 a 99, estos rangos son puestos por la propia API de Discord.
+ 
  ###### colores
  Los colores deben ser especificados en ingles y en mayúsculas `BLUE`, que deben de estar especificadas en la documentación de [Discord js](https://discord.js.org/#/docs/main/stable/typedef/ColorResolvable), tambien se puede especificar de forma hexadecimal `#fba919`, en caso no sepa que color elegir puede usar `RANDOM`.
  
@@ -90,6 +102,7 @@ La informacion recopilada del mensaje es:
  - Nombre del gremio.
  - ID del Autor del mensaje.
  - Contenido del mensaje.
+ - URL (en caso exista)
  
 Los datos almacenados no son compartidos ni vendidos a terceros, se quedan en la BD de **Maldibot** para su posterior procesamiento, la única persona que accede a tal informacion es el propietario a esta cuenta de **Github** y tal vez en un futuro un equipo. No se considera equipo a los contribuyentes (no oficializados) a este código.
 
@@ -98,10 +111,12 @@ Los datos almacenados no son compartidos ni vendidos a terceros, se quedan en la
 
 ### Dependencias
 Este proyeco es open source incluyendo las dependencias utilizadas.
- - [discordjs](https://github.com/discordjs/discord.js)
- - [yt-search](https://www.npmjs.com/package/yt-search)
+ - [discordjs](https://github.com/discordjs/discord.js)  
+  - [@discordjs](https://github.com/discordjs/opus#readme)
+ - [ffmpeg-static](https://www.npmjs.com/package/ffmpeg-static)
+ - [opusscript](https://www.npmjs.com/package/opusscript)
  - [mongoose](https://mongoosejs.com/docs/api.html)
- - [ytdl-core-discord](https://www.npmjs.com/package/ytdl-core-discord) 
+ - [ytdl-core](https://www.npmjs.com/package/ytdl-core) 
 
 ------------
 

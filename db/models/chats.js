@@ -5,5 +5,6 @@ const chat = new Schema ({
     channelName:String,
     userID: String,
     message: String,
+    urls: Array,
 })
 module.exports = model('chats',chat)
