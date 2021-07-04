@@ -46,7 +46,7 @@ client.on('message', message => {
     message.channel.send("No se admite nopor")
   }
 
-  if (message.content.startsWith(">")) {
+  if (message.content.startsWith("!")) {
     let args = message.content.slice(1).trim().split(/ +/g)
     let command = args.shift().toLowerCase()
     let cmd = client.commands.get(command) || client.commands.find(c=>c.alias.includes(command))
