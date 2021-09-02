@@ -15,22 +15,27 @@ class installRoles{
         })
     }
     static installAllRoles(roles,message){
-        for(rol in roles){
-            role = roles[rol]
-            role.forEach(r => {
-                if(!verifyRole(message,rol)){
-                    ctrlRol.updateRole(message,rol) //update the rol, set permission from json
-                    return message.channel.send(`El rol "${rol.name}" ha sido actualizado`)
-                }else{
-                    message.guild.roles.create({
-                        data:{
-                            name: r.name,
-                            color: r.color,
-                            permissions: r.permissions
-                        }
-                    })
-                }
-            });
+        for(let rol in roles){
+            try{
+                let role = roles[rol]
+                role.forEach(r => {
+                    if(!verifyRole(message,rol)){
+                        ctrlRol.updateRole(message,rol) //update the rol, set permission from json
+                        return message.channel.send(`El rol "${rol.name}" ha sido actualizado`)
+                    }else{
+                        message.guild.roles.create({
+                            data:{
+                                name: r.name,
+                                color: r.color,
+                                permissions: r.permissions
+                            }
+                        })
+                    }
+                });
+            }catch(err){
+                console.log(`Error al instalar los rolles en installAllRoles method`);
+                console.log(`El Error: ${err}`);
+            }
         }
     }
 }

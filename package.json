@@ -12,10 +12,10 @@
   "dependencies": {
     "@discordjs/opus": "^0.5.0",
     "discord.js": "^12.5.3",
-    "dotenv": "^8.2.0",
+    "dotenv": "^8.6.0",
     "ffmpeg-static": "^4.3.0",
     "file-system": "^2.2.2",
-    "mongoose": "^5.12.4",
+    "mongoose": "^5.13.3",
     "opusscript": "^0.0.8",
     "ytdl-core": "^4.7.0"
   },
