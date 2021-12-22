@@ -1,10 +1,11 @@
 require('dotenv').config()
-const { Client, Collection } = require('discord.js');
+const { Client, Collection, MessageEmbed } = require('discord.js');
 require('./db/conexion')
 const client = new Client();
 const fs = require('fs')
 const messageSaveChats = require('./functions/register_chat')
 
+client.afk = new Collection();
 client.music = new Map()
 client.commands = new Collection();
 client.cooldowns = new Collection();
@@ -75,6 +76,24 @@ client.on('message', message => {
       setTimeout(() => timestamps.delete(message.author.id), cooldownAmount);
       return cmd.run(client,message,args)
     }
+  }else if(message.mentions.users.first()){
+    let tmp = []
+    let send_msg = false;
+    message.mentions.users.forEach(async u=>{
+      if(client.afk.has(u.id)){
+        tmp.push(u.username)
+        send_msg = true;
+        await u.send(`El usuario ${message.author.username} te ha mencionado en el servidor "${message.guild.name}" en el canal "${message.channel.name}"`)
+        const member = message.member
+        const embed = new MessageEmbed()
+        .setTitle("Estoy AKF! :D")
+        .setAuthor(member.nickname ? member.nickname : u.username , u.avatarURL())
+        .setDescription(`Mensaje personalizado:\n${client.afk.get(u.id)["msg"]}\nDe: ${u.username}`)
+        await message.author.send({embed: embed})
+      }
+    })
+    if(send_msg) message.reply(`${tmp.length>=2 ? "Los usuarios":"El usuario"} ${tmp.join(",")} esta(n) AFK`)
+
   }
 });
 
