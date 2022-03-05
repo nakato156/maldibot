@@ -4,6 +4,7 @@ require('./db/conexion')
 const client = new Client();
 const fs = require('fs')
 const messageSaveChats = require('./functions/register_chat')
+const BDprefix = require('./db/models/prefixs');
 
 client.afk = new Collection();
 client.music = new Map()
@@ -35,7 +36,7 @@ client.on('ready', ()=>{
 })
 const now = Date.now(); 
 
-client.on('message', message => {
+client.on('message', async message => {
   if(message.author.bot)return;
   messageSaveChats.saveMessage(message)
   // Ignore messages that aren't from a guild
@@ -47,7 +48,10 @@ client.on('message', message => {
     message.channel.send("No se admite nopor")
   }
 
-  if (message.content.startsWith("!")) {
+  const server = await BDprefix.findOne({'serverID': message.guild.id})
+  const prefix = server ? server.prefix : "!";
+  if(message.content.trim()===prefix) return;
+  else if (message.content.startsWith(prefix)) {
     let args = message.content.slice(1).trim().split(/ +/g)
     let command = args.shift().toLowerCase()
     let cmd = client.commands.get(command) || client.commands.find(c=>c.alias.includes(command))

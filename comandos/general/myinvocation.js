@@ -13,10 +13,10 @@ module.exports ={
         const invocate = await myInvocate.findOne({'userID':user.id})
         if(invocate !=null || invocate !=undefined){
             const newInvocation = await myInvocate.findOneAndUpdate({userID: user.id},{
-                $set:{//si no exite lo guarda
+                $set:{
                     invocation:nameInvocation
                 }
-            })
+            }, {useFindAndModify: false})
             console.log(invocate!=null)
             console.log(newInvocation)
             return user.send(`Tu nuevo comando de invocacion es: ${nameInvocation}`)

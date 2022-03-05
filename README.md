@@ -1,4 +1,4 @@
-#Maldibot V1.1
+#Maldibot V1.1.1
 
 **Table of Contents**
 
@@ -12,21 +12,18 @@
 Maldibot es un bot diseñado para Discord desarrollado en **Node js**, fue elaborado para realizar casi cualquier tarea menos hacer la tuya. Esta es la v1, aunque hay comandos inestables. No se proporciona un link para unir al bot, debido a que sigue en desarrollo y se prefiere tenerlo en un ambiente controlado.  
 
 ------------
-# Release V1.1
-En esta version se cambio la forma en que se hace las peticiones a la API de YouTube, esto deberia de corregir errores de compatibilidad del servidor, en caso de *localhost* no hay problemas hasta la fecha. Asi mismo se agrego un nuevo comando y se cambio la forma de conexion a la Base de Datos.
+# Release V1.1.1
+Se agregó el comando `prefix` que permite cambiar el prefijo con el que el bot es utilizado.
 
 ##### cambios
- - Agregado de comando `clear`
- - Cambio de conexion a la BD
- - Mejora en el filtro de mensajes
- - Cambio en uso de la API de YouTube
- - Almacenado de url en BD
+ - Agregado de comando `prefix`
 
 ------------
 
 ## Comandos
  #### aclaraciones
-- El prefijo establecido para llamar o usar un comando es "!" y no puede ser cambiado (solo modificando el codigo).
+- El prefijo establecido para llamar o usar un comando es "!", si desea cambiarlo puede ejecutar el comando `!prefix <nuevo_prefijo>`.
+- En toda la documentación se usará `!` para referirnos al prefijo, adaptelo al que usted use.
 - Se puede obtener informacion de un comando usando la siguiente expresión `!help <command>`
 
 #### Comandos
