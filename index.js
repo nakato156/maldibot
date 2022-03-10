@@ -6,6 +6,16 @@ const fs = require('fs')
 const messageSaveChats = require('./functions/register_chat')
 const BDprefix = require('./db/models/prefixs');
 
+const { DisTube } = require("distube")
+const { SpotifyPlugin } = require("@distube/spotify")
+
+client.distube = new DisTube(client, {
+  emitNewSongOnly: true,
+  leaveOnFinish: false,
+  emitAddSongWhenCreatingQueue: false,
+  plugins: [new SpotifyPlugin()]
+})
+
 client.afk = new Collection();
 client.music = new Map()
 client.commands = new Collection();

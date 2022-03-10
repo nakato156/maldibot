@@ -13,10 +13,10 @@ Maldibot es un bot diseñado para Discord desarrollado en **Node js**, fue elabo
 
 ------------
 # Release V1.1.1
-Se agregó el comando `prefix` que permite cambiar el prefijo con el que el bot es utilizado.
+Se arregló la funcionalidad de música. Ahora solo exite el comando `music` el cuál tiene 3 opciones: `play`, `stop` y `skip`. El modo de uso es `music <opcion>`.
 
 ##### cambios
- - Agregado de comando `prefix`
+ - Actualización de comando `play` a `music`
 
 ------------
 
@@ -52,9 +52,11 @@ Los comandos estan divididos según su uso o permisos.
   Los comandos de la seccion musica tambien son generales, es decir cualquier persona puede usarlo, sin embargo se optó por crear una sección aparte en la documentación. 
 - `!list <music?>` : Guarda o una canción en una lista, es algo parecido a una playlist de YouTube pero en discord, si no se especifica un argumento devuelve tu lista de canciones. `!playlist`,`!mylist`
 
- `!play <music or url>` : Reproduce una canción a partir de un nombre o una URL de YouTube (solo acepta una URL de esta plataforma), la música es buscada en la plataforma mencionada anteriormente. Este comando está en fase de prueba (ver las seccion Nota).Alias `!p`
- 
- `!leave` : Desconecta al bot del canal de voz.Alias `!salir`
+ `!music <opcion>` : Ejecuta un comando referente a música según la opción pasada. Alias `m`
+    - `play <canción>`: Reproduce una canción a partir de un nombre o una URL de YouTube (solo acepta una URL de esta plataforma), la música es buscada en la plataforma mencionada anteriormente. Este comando está en fase de prueba (ver las seccion Nota).
+    - `stop`: Detiene la reproducción de música y el bot sale del canal de voz.
+    - `skip`: Salta a la siguiente canción.
+
 
 ##### Administración
 Todos los comandos en esta seccion solo pueden ser usado por el administrador del servidor o que tenga el permiso señalado.
